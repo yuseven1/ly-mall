@@ -1,0 +1,20 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: auth-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+leyou:
+  jwt:
+    secret: leyou@login(Auth)*@^131)&&heiMa%
+    pubKeyPath: E:\BaiduNetdiskDownload\01 - 黑马JAVA EE 57期\04-项目1\07-乐优商城\乐优商城-11月版\leyou\day17-授权中心\rsa\rsa.pub
+    priKeyPath: E:\BaiduNetdiskDownload\01 - 黑马JAVA EE 57期\04-项目1\07-乐优商城\乐优商城-11月版\leyou\day17-授权中心\rsa\rsa.pri
+    expire: 30
+    cookieName: LY_TOKEN

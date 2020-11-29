@@ -1,0 +1,36 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: leyou-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5
+
+zuul:
+  prefix: /api
+  routes:
+    item-service: /item/**
+    search-service: /search/**
+    user-service: /user/**
+    auth-service: /auth/**
+    cart-service: /cart/**
+  add-host-header: true
+  # 默认拦截cookies 和 set-cookies auth 头信息， 配置为空，覆盖默认配置
+  sensitive-headers:
+
+leyou:
+  jwt:
+    pubKeyPath: E:\BaiduNetdiskDownload\01 - 黑马JAVA EE 57期\04-项目1\07-乐优商城\乐优商城-11月版\leyou\day17-授权中心\rsa\rsa.pub
+    cookieName: LY_TOKEN
+  filter:
+      allowPaths:
+        - /api/auth
+        - /api/search
+        - /api/user/register
+        - /api/user/check
+        - /api/user/code
+        - /api/item
+
